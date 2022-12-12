@@ -336,12 +336,18 @@
     <title>The Effects of Diet Culture</title>
     <link rel="stylesheet" href="/Consumption/styles/common.css" />
     <style>
-      #scrollBox {
-        height: 300vh;
-        border-bottom: 4px solid red;
+      .inner {
+        position: relative;
       }
-      #box {
-        width: 3505px;
+      #scrollBox {
+        height:200vh;
+        margin-bottom: 350px;
+      }
+      #box{
+        position: absolute;
+        width:auto;
+        height:770px;
+        z-index: +1;
       }
       #box img {
         width: 3505px;
@@ -356,7 +362,6 @@
         height="500"
       />
       <div class="inner">
-        <div id="scrollBox">
           <div id="box">
             <img
               src="/Consumption/images/liserena_diet_culture_pt_2_no_scroll.png"
@@ -365,6 +370,7 @@
               height="770"
             />
           </div>
+        <div id="scrollBox">
         </div>
         <div id="afterBox">
           <img
@@ -462,10 +468,10 @@
           scrollTrigger: {
             trigger: "#scrollBox", // element to trigger the animation
             scrub: true, // control animaiton with the scrollbar
-            pin: true, // fix position while animating
-            start: "top 100px", // animate when the top of the trigger hits the top of the viewport
-            end: "bottom 100px", // animate when the bottom of the trigger hits the bottom of the viewport
-            //markers: true // show the position markers for debugging
+            pin: "#box", // fix position while animating
+            start: "top 10px", // animate when the top of the trigger hits the top of the viewport
+            end: "bottom center", // animate when the bottom of the trigger hits the bottom of the viewport
+            // markers: true // show the position markers for debugging
           },
         }
       );
